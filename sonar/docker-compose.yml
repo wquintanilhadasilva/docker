@@ -20,10 +20,6 @@ networks:
 
 volumes:
   sonarqube_data:
-    driver: ./volume/data
   sonarqube_extensions:
-    driver: ./volume/extensions
   sonarqube_logs:
-    driver: ./volume/logs
   sonarqube_temp:
-    driver: ./volume/temp
