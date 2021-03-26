@@ -10,8 +10,13 @@ services:
     ports:
       - 8080:8080
       - 50000:50000
+    networks: 
+      - jenkinsnet
     volumes: 
       - ./volume/jenkins/:/var/jenkins_home
       # - ./volume/jenkins/run/docker.sock:/var/run/docker.sock
       # - ./volume/jenkins/bin/docker:/usr/local/bin/docker
       # docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword senha inicial
+networks:
+  jenkinsnet:
+    driver: bridge
