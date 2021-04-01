@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  oracle-db:
+    image: oracleinanutshell/oracle-xe-11g:latest
+    container_name: plc-aprd-oracle11
+    ports:
+      - 1521:1521
+      - 5500:5500
+    networks:
+      - oracle-net
+networks:
+  oracle-net:
