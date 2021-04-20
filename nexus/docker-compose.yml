@@ -20,7 +20,7 @@ services:
     networks:
       - nexus-data
     ports:
-        - 8080:8080
+        - 8081:8081
     # volumes:
     # - ./volume/nexus-data/:/nexus-data
     # labels:
