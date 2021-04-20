@@ -1,0 +1,36 @@
+
+#1. Create a volume directory for nexus-data. I used /nexus-data directory which is mount point of the second disk 
+# mkdir /nexus-data
+# chown -R 200 /nexus-data  #nexus user id 200 in dockerfile
+#Create a letsencrypt directory to store traefik acme.json file which keeps SSL certs
+# mkdir -p /docker/letsencrypt
+
+#Change NEXUS.mydomain.com with your domain name.
+#Change acme.email=MYEMAIL@gmail.com
+
+# cat docker-compose.yml 
+
+version: '3.3'
+
+services:
+  nexus:
+    container_name: nexus
+    image: sonatype/nexus3
+    # restart: always
+    networks:
+      - nexus-data
+    ports:
+        - 8080:8080
+    # volumes:
+    # - ./volume/nexus-data/:/nexus-data
+    # labels:
+    #   - traefik.port=8081
+    #   - traefik.http.routers.nexus.rule=Host(`NEXUS.mydomain.com`)
+    #   - traefik.enable=true
+    #   - traefik.http.routers.nexus.entrypoints=websecure
+    #   - traefik.http.routers.nexus.tls=true
+    #   - traefik.http.routers.nexus.tls.certresolver=myresolver
+
+networks:
+  nexus-data:
+    driver: bridge
