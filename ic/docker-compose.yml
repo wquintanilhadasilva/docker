@@ -1,0 +1,13 @@
+version: "3"
+services:
+
+  sonar:
+    image: sonarqube:6.5
+    ports:
+      - 9000:9000
+      - 9092:9092
+  jenkins:
+    image: jenkins/jenkins:lts
+    ports:
+      - 8080:8080
+      - 50000:50000
