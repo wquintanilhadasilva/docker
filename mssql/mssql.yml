@@ -8,7 +8,7 @@ services:
     environment:
     - ACCEPT_EULA=Y
     - MSSQL_PID=Express
-    - SA_PASSWORD=123456
+    - SA_PASSWORD=MsQl12345678
     - MSSQL_DATABASE=lab-mssql
     - MSSQL_SLEEP=60
     ports:

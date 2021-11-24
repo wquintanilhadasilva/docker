@@ -1,6 +1,7 @@
 version: '2'
 services:
   lab-mssql:
+    container_name: lab-mysql
     extends:
       file: mssql.yml
       service: lab-mssql
