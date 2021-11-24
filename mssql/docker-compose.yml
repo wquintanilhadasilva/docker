@@ -1,0 +1,12 @@
+version: '2'
+services:
+  lab-mssql:
+    extends:
+      file: mssql.yml
+      service: lab-mssql
+    mem_limit: 1024M
+    volumes:
+    - mssql_data:/var/opt/mssql/data/
+
+volumes:
+  mssql_data:
