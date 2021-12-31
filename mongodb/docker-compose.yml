@@ -15,7 +15,7 @@ services:
     links:
       - lab-mongo-db
     networks:
-      - mongo-network
+      - lab-mongo-network
 
   lab-mongo-db:
     image: mongo:latest
@@ -29,11 +29,11 @@ services:
     volumes:
       - mongodb_data_container:/data/db
     networks:
-      - mongo-network
+      - lab-mongo-network
 
 volumes:
   mongodb_data_container:
 
 networks: 
-    mongo-network:
+    lab-mongo-network:
       driver: bridge
